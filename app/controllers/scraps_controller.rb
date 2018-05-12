@@ -50,6 +50,6 @@ class ScrapsController < ApplicationController
     @scrap = Scrap.find params[:id]
   end
   def scrap_params
-    params.require(:scrap).permit(:title,:description)
+    params.require(:scrap).permit(:image,:title,:description)
   end
 end

@@ -1,5 +1,9 @@
 <h1><%= @scrap.title %></h1>
 <p><%= @scrap.description %> </h1>
+  <br/>
+  <img width="100px" height="100px" src="<%= @scrap.image %>">
+  <br/>
+  <small> By: <%= @scrap.user.full_name %> </small>
   <hr/>
 <%= link_to 'Edit',edit_scrap_path(@scrap),class:"btn btn-info" %>
 <%= link_to 'Delete', scrap_path(@scrap), method: :delete, data: {confirm: 'Are you sure?'},class:"btn btn-danger" %>
@@ -8,7 +12,7 @@
 <%= f.submit 'Add Comment', class: 'btn btn-secondary' %>
 <% end %>
 <hr/>
-<h2> Commnets </h2>
+<h2> Comments </h2>
 <% @scrapscomments.each do |scrapscomment| %>
 <p><%= scrapscomment.body %></p>
 <small><%= time_ago_in_words(scrapscomment.created_at) %> ago</small>

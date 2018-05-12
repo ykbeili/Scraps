@@ -4,7 +4,7 @@
   <p><strong> Description: </strong> <%= idea.description %> </p>
   <small><%= time_ago_in_words(idea.created_at) %> ago</small>
   <br>
-  <small> by <%= idea.user.full_name %> </small>
+  <small> By: <%= idea.user.full_name %> </small>
 </div>
     <hr>
 <% end %>
