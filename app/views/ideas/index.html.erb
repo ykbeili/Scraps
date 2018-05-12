@@ -1,3 +1,9 @@
+<%= form_for ideas_path, class:"form-inline my-2 my-lg-0", :method => 'get' do %>
+<p>
+  <%= text_field_tag :search  %>
+  <%= submit_tag 'Search',class:"btn btn-outline-success my-2 my-sm-0"%>
+</p>
+<% end %>
 <% @ideas.each do |idea| %>
 <div>
   <h5>Title: <%= link_to idea.title,idea_path(idea) %></h5>

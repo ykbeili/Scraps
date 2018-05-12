@@ -1,12 +1,20 @@
+
 <div class="container">
+  <%= form_for scraps_path, class:"form-inline my-2 my-lg-0", :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search  %>
+    <%= submit_tag 'Search by Title',class:"btn btn-outline-success my-2 my-sm-0"%>
+  </p>
+  <% end %>
   <div class="row">
     <% @scraps.each do |scrap|  %>
-    <div class="card col-3 m-2" style="width: 18rem;">
+    <div class="card col-3 m-2" style="width: 18rem;" background-color="red">
+      <% if scrap.image? %>
       <img class="card-img-top" src="<%=scrap.image%>" alt="Card image cap">
+      <% end %>
       <div class="card-body">
-        <h5><%= link_to scrap.title,scrap_path(scrap),class:"card-title" %></h5>
-        <br>
-        <h6>  <%= scrap.description %></h6>
+        <h5><strong>Title:</strong><%= link_to scrap.title,scrap_path(scrap),class:"card-title" %></h5>
+        <h6><strong>Description: </strong> <%= scrap.description %></h6>
       </div>
     </div>
   <% end %>

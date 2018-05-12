@@ -17,7 +17,8 @@ class ScrapsController < ApplicationController
   end
 
   def index
-    @scraps = Scrap.order(created_at: :desc)
+    @scraps = Scrap.search(params[:search])
+    # @scraps = Scrap.order(created_at: :desc)
   end
 
   def show

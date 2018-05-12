@@ -7,7 +7,8 @@ class IdeasController < ApplicationController
   end
 
   def index
-    @ideas = Idea.order(created_at: :desc)
+    # @ideas = Idea.order(created_at: :desc)
+    @ideas = Idea.search(params[:search])
   end
 
   def create

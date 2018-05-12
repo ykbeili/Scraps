@@ -4,4 +4,12 @@ class Scrap < ApplicationRecord
   validates :description, presence: true
   has_many :scrapscomments,dependent: :destroy
   mount_uploader :image, ImageUploader
+
+  def self.search(search)
+    if search
+      where(['title LIKE ?', "%#{search}%"])
+    else
+      all
+    end
+  end
 end

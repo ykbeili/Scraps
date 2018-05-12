@@ -1,7 +1,9 @@
 <h1><%= @scrap.title %></h1>
 <p><%= @scrap.description %> </h1>
   <br/>
+  <% if @scrap.image? %>
   <img width="100px" height="100px" src="<%= @scrap.image %>">
+  <% end %>
   <br/>
   <small> By: <%= @scrap.user.full_name %> </small>
   <hr/>
