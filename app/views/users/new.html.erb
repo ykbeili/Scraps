@@ -1,0 +1,16 @@
+<h1> Sign Up </h1>
+<% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= simple_form_for @user do |f| %>
+<%= f.input :first_name, required: false, label_html: { class: 'abc' } %>
+<%= f.input :last_name, required: false, label_html: { class: 'abc' } %>
+<%= f.input :email, required: false, label_html: { class: 'abc' } %>
+<%= f.input :password, required: false, label_html: { class: 'abc' } %>
+<%= f.input :password_confirmation, required: false, label_html: { class: 'abc' } %>
+<%= f.submit 'Sign Up', class: 'btn btn-warning' %>
+<% end %>

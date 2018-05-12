@@ -1,0 +1,6 @@
+<h1> Edit Scrap </h1>
+<%= simple_form_for @scrap do |f| %>
+<%= f.input :title, required: false, label_html: { class: 'abc' } %>
+<%= f.input :description, required: false, label_html: { class: 'abc' } %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>

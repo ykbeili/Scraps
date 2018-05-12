@@ -1,0 +1,8 @@
+<% @scraps.each do |scrap| %>
+<h5><%= link_to scrap.title,scrap_path(scrap) %></h5>
+<p><%= scrap.description %></p>
+<small>By <%= scrap.user.full_name %> </small>
+<br>
+<small>Created About <%= time_ago_in_words(scrap.created_at) %> ago</small>
+<hr>
+<% end %>

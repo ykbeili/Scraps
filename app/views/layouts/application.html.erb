@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scraps</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <nav id="navBar" class="navbar fixed-top navbar-dark bg-dark justify-content-center">
+      <ul class="nav text-uppercase font-weight-light">
+        <li class="nav-item">
+          <%= link_to 'Home',home_path,class:"nav-link text-light animated bounceInLeft" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Ideas',ideas_path,class:"nav-link text-light animated bounceInLeft" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Scraps',scraps_path,class:"nav-link text-light animated bounceInLeft" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Add Idea',new_idea_path,class:"nav-link text-light animated bounceInLeft" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Add Scrap',new_scrap_path,class:"nav-link text-light animated bounceInLeft" %>
+        </li>
+        <li class="nav-item">
+          <% if user_signed_in? %>
+          <li class="nav-link text-light animated bounceInLeft">Hello, <%= current_user.first_name %></li>
+          <%= link_to "Logout", sessions_path, method: :delete,class:"nav-link text-light animated bounceInLeft"%>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to 'Login',new_sessions_path,class:"nav-link text-light animated bounceInLeft" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Sign up',new_user_path,class:"nav-link text-light animated bounceInLeft" %>
+        </li>
+        <% end %>
+      </ul>
+    </nav>
+    <br>
+    <% if flash[:notice].present? || flash[:alert].present? %>
+     <div class="flash-message">
+       <%= flash[:notice] || flash[:alert] %>
+     </div>
+   <% end %>
+    <%= yield %>
+  </body>
+</html>
