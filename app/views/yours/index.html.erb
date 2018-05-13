@@ -8,7 +8,7 @@
 <% else %>
 <% @my_ideas.each do |mi| %>
 <ul>
-<li>Title: <%= link_to mi.title,idea_path(mi) %></li>
+  <li>Title: <%= link_to mi.title,idea_path(mi) %> | (<%= mi.ideascomments.count %>) Comments</li>
 </ul>
 <hr/>
 <% end %>
@@ -20,7 +20,7 @@
 <% else %>
 <% @my_scraps.each do |ms| %>
 <ul>
-<li><strong>Title:</strong> <%= link_to ms.title,scrap_path(ms),class:"card-title" %></li>
+  <li><strong>Title:</strong> <%= link_to ms.title,scrap_path(ms),class:"card-title" %>| (<%= ms.scrapscomments.count %>) Comments</li>
 </ul>
 <hr/>
 <% end %>
