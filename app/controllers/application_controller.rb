@@ -1,7 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  use_growlyflash
   def authenticate_user!
-    redirect_to new_sessions_path, notice: "Please sign in" unless user_signed_in?
+    unless user_signed_in?
+     flash[:alert] =  "You must sign in or sign up first!"
+     redirect_to new_sessions_path
+   end
   end
   def user_signed_in?
     current_user.present?

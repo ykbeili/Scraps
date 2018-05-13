@@ -15,5 +15,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require growlyflash
 // Setting up the Variables
 document.getElementsByTagName("h1")[0].style.fontSize = "80px";

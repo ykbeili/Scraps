@@ -27,7 +27,8 @@
         </li>
         <li class="nav-item">
           <% if user_signed_in? %>
-          <li class="nav-link text-light animated bounceInLeft">Hello, <%= current_user.first_name %></li>
+          <li class="nav-link text-light animated bounceInLeft">Hello, <%=link_to "#{current_user.first_name}",yours_path %></li> 
+          <%= link_to "My Profile", yours_path,class:"nav-link text-light animated bounceInLeft"%>
           <%= link_to "Logout", sessions_path, method: :delete,class:"nav-link text-light animated bounceInLeft"%>
         </li>
         <% else %>
