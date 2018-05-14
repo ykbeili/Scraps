@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email params[:session][:email]
     if @user && @user.authenticate(params[:session][:password])
-      session[:user] = @user.id
+      session[:user_id] = @user.id
       redirect_to home_path, notice:  "Logged in"
     else
       render :new
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
  end
 
   def destroy
-    session[:user] = nil
+    session[:user_id] = nil
     redirect_to home_path, notice: "Logged out"
   end
  end

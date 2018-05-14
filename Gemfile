@@ -28,6 +28,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'omniauth-twitter'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'growlyflash'
