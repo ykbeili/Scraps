@@ -1,10 +1,11 @@
 <%= form_for ideas_path, class:"form-group", :method => 'get' do %>
 <p>
   <%= text_field_tag :search,'' , class:"form-control" %>
-  <%= submit_tag 'Search',class:"btn btn-outline-info my-2 my-sm-0"%>
+  <%= submit_tag 'Search',class:"btn btn-outline-dark my-2 my-sm-0"%>
 </p>
 <% end %>
 <h1 class="card-title">All Ideas </h1>
+<% if @ideas.any? %>
 <% @ideas.each do |idea| %>
 <div id="accordion">
   <div class="card">
@@ -13,14 +14,20 @@
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= idea.id %>" aria-expanded="true" aria-controls="collapseOne">
           <strong>Title:</strong> <%= idea.title %>
         </button>
+        <small class="badge badge-primary badge-pill float-right" id="right"><%= time_ago_in_words(idea.created_at) %> ago</small>
       </h5>
     </div>
     <div id="collapse<%= idea.id%>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-        <li>Description: <%= link_to idea.description,idea_path(idea) %></li>
-      <li><small> By: <%= idea.user.full_name %> </small></li>
-      <li><small><%= time_ago_in_words(idea.created_at) %> ago</small></li>
+        <li id="black">Description: <%= link_to idea.description,idea_path(idea) %></li>
+        <li><small> By: <%= idea.user.full_name %> </small></li>
+
       </div>
     </div>
   </div>
+<% end %>
+<% elsif @search_param %>
+<h1> Couldn't find any ideas for your search "<%= @search_param %>" </h1>
+<% else %>
+<h1> There are no ideas </h1>
 <% end %>

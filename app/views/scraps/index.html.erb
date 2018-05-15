@@ -1,18 +1,26 @@
-  <%= form_for scraps_path, class:"form-inline my-2 my-lg-0", :method => 'get' do  %>
-  <%= text_field_tag :search, '' , class:"form-control" %>
-    <%= submit_tag 'Search by Title',class:"btn btn-outline-dark my-2 my-sm-0"%>
-  <% end %>
-  <% @scraps.each do |scrap|  %>
-  <div class="container">
-    <div id="background">
-      <div id="gallery" >
-        <figure class="pic<%= Random.rand(11)%>">
-          <img src="<%=scrap.image%>" width="300px" height="300px" />
-          <figcaption><strong><%= link_to scrap.title,scrap_path(scrap) %></strong></figcaption>
-          <% if scrap.description.length < 40 %>
-          <figcaption><strong><%= scrap.description %></strong></figcaption>
-          <% else %>
-          <%= scrap.description[0..40].insert(40,'...')  %>
-          <% end %>
-        </figure>
+<%= form_for scraps_path, class:"form-inline my-2 my-lg-0", :method => 'get' do  %>
+<%= text_field_tag :search, '' , class:"form-control" %>
+<%= submit_tag 'Search by Title',class:"btn btn-outline-dark my-2 my-sm-0"%>
+<% end %>
+<% if @scraps.any? %>
+<% @scraps.each do |scrap|  %>
+<div class="container">
+  <div id="background">
+    <div id="gallery" >
+      <figure class="pic<%= Random.rand(11)%>">
+        <img src="<%=scrap.image%>" width="300px" height="300px" />
+        <figcaption><strong><%= link_to scrap.title,scrap_path(scrap) %></strong></figcaption>
+        <% if scrap.description.length < 40 %>
+        <figcaption><strong><%= scrap.description %></strong></figcaption>
+        <% else %>
+        <%= scrap.description[0..40].insert(40,'...')  %>
         <% end %>
+      </figure>
+      <% end %>
+      <% elsif @search_param_scrap %>
+      <br/>
+      <h1> Couldn't find any ideas for your search "<%= @search_param_scrap %>" </h1>
+      <% else %>
+      <br/>
+      <h1> There are no Scraps </h1>
+      <% end %>

@@ -8,7 +8,8 @@ class IdeasController < ApplicationController
   end
 
   def index
-    @ideas = Idea.search(params[:search])
+    @search_param = params[:search]
+    @ideas = Idea.search(@search_param)
   end
 
   def create

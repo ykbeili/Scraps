@@ -18,7 +18,8 @@ class ScrapsController < ApplicationController
   end
 
   def index
-    @scraps = Scrap.search(params[:search])
+    @search_param_scrap = params[:search]
+    @scraps = Scrap.search(@search_param_scrap)
     # @scraps = Scrap.order(created_at: :desc)
   end
 
@@ -53,7 +54,7 @@ class ScrapsController < ApplicationController
   def find_scraps
     @scrap = Scrap.find params[:id]
   end
-  
+
   def scrap_params
     params.require(:scrap).permit(:image,:title,:description)
   end
