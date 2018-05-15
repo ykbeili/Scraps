@@ -4,15 +4,23 @@
   <%= submit_tag 'Search',class:"btn btn-outline-info my-2 my-sm-0"%>
 </p>
 <% end %>
+<h1 class="card-title">All Ideas </h1>
 <% @ideas.each do |idea| %>
-<div>
-  <dl>
-  <dt>Title: <%= link_to idea.title,idea_path(idea) %></dt>
-  <dd><strong> Description: </strong> <%= idea.description %> </dd>
-  <small><%= time_ago_in_words(idea.created_at) %> ago</small>
-  <br>
-  <small> By: <%= idea.user.full_name %> </small>
-</dl>
-</div>
-<hr>
+<div id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse<%= idea.id %>" aria-expanded="true" aria-controls="collapseOne">
+          <strong>Title:</strong> <%= idea.title %>
+        </button>
+      </h5>
+    </div>
+    <div id="collapse<%= idea.id%>" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <li>Description: <%= link_to idea.description,idea_path(idea) %></li>
+      <li><small> By: <%= idea.user.full_name %> </small></li>
+      <li><small><%= time_ago_in_words(idea.created_at) %> ago</small></li>
+      </div>
+    </div>
+  </div>
 <% end %>
