@@ -2,12 +2,12 @@ class IdeasController < ApplicationController
   before_action :find_ideas, only: [:show,:update,:edit,:destroy]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :authorize_user!, only: [:edit,:update,:destroy]
+
   def new
     @idea = Idea.new
   end
 
   def index
-    # @ideas = Idea.order(created_at: :desc)
     @ideas = Idea.search(params[:search])
   end
 
@@ -41,16 +41,19 @@ class IdeasController < ApplicationController
   end
 
 private
-def authorize_user!
-  unless can?(:manage,@idea)
-    flash[:alert] = 'Access Denied'
-    redirect_to idea_path(@idea)
+
+  def authorize_user!
+    unless can?(:manage,@idea)
+      flash[:alert] = 'Access Denied'
+      redirect_to idea_path(@idea)
+    end
   end
-end
-  def idea_params
+
+   def idea_params
     params.require(:idea).permit(:title,:description)
   end
-  def find_ideas
+
+   def find_ideas
     @idea = Idea.find params[:id]
+   end
   end
-end

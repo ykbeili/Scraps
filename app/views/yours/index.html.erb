@@ -1,7 +1,6 @@
 <h1>My Profile </h1>
 <hr/>
-
-<h2>My Ideas </h2>
+<h3>My Ideas: </h3>
 <% if @my_ideas.count == 0 %>
 <p> <strong>You haven't added any idea yet</strong> </p>
 <%= link_to 'Add the first one',new_idea_path %>
@@ -13,7 +12,8 @@
 <hr/>
 <% end %>
 <% end %>
-<h2>My Scraps </h2>
+<hr/>
+<h3>My Scraps: </h3>
 <% if @my_scraps.count == 0 %>
 <p> You haven't created an Scrap post yet </p>
 <%= link_to 'Add the first one',new_scrap_path %>
@@ -23,6 +23,5 @@
   <li><strong>Title:</strong> <%= link_to ms.title,scrap_path(ms),class:"card-title" %>| (<%= ms.scrapscomments.count %>) Comments</li>
 </ul>
 <hr/>
-
 <% end %>
 <% end %>

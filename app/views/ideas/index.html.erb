@@ -1,16 +1,18 @@
-<%= form_for ideas_path, class:"form-inline my-2 my-lg-0", :method => 'get' do %>
+<%= form_for ideas_path, class:"form-group", :method => 'get' do %>
 <p>
-  <%= text_field_tag :search  %>
+  <%= text_field_tag :search %>
   <%= submit_tag 'Search',class:"btn btn-outline-success my-2 my-sm-0"%>
 </p>
 <% end %>
 <% @ideas.each do |idea| %>
 <div>
-  <h5>Title: <%= link_to idea.title,idea_path(idea) %></h5>
-  <p><strong> Description: </strong> <%= idea.description %> </p>
+  <dl>
+  <dt>Title: <%= link_to idea.title,idea_path(idea) %></dt>
+  <dd><strong> Description: </strong> <%= idea.description %> </dd>
   <small><%= time_ago_in_words(idea.created_at) %> ago</small>
   <br>
   <small> By: <%= idea.user.full_name %> </small>
+</dl>
 </div>
-    <hr>
+<hr>
 <% end %>

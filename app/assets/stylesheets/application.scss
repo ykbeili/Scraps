@@ -12,22 +12,25 @@
  *
  */
 @import "bootstrap";
-@import "growlyflash";
+@import "scraps";
+
 body {
   background-color: #e9ecef;
 }
 
-html, body {
-    overflow: hidden;
+body {
+    // overflow: hidden;
     height: 100%;
 }
 
 body {
     padding-top: 50px;
 }
+
 #weird{
   background-color: #343a40 ;
 }
+
 #navBar{
  margin-bottom: 0px !important;
 }

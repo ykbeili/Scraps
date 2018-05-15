@@ -1,4 +1,5 @@
 class IdeascommentsController < ApplicationController
+  
   def create
   @idea = Idea.find params[:idea_id]
   ideas_params = params.require(:ideascomment).permit(:body)
@@ -8,6 +9,7 @@ class IdeascommentsController < ApplicationController
   @ideascomment.save
   redirect_to idea_path(@idea)
   end
+
   def destroy
     ideascomment = Ideascomment.find params[:id]
     ideascomment.destroy

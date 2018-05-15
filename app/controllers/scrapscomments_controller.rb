@@ -1,4 +1,5 @@
 class ScrapscommentsController < ApplicationController
+  
   def create
   @scrap = Scrap.find params[:scrap_id]
   scrap_params = params.require(:scrapscomment).permit(:body)
@@ -8,6 +9,7 @@ class ScrapscommentsController < ApplicationController
   @scrapscomment.save
   redirect_to scrap_path(@scrap)
   end
+
   def destroy
     scrapscomment = Scrapscomment.find params[:id]
     scrapscomment.destroy

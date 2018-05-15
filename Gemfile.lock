@@ -68,9 +68,6 @@ GEM
     ffi (1.9.23)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    growlyflash (0.10.0)
-      coffee-rails (>= 3.2.1)
-      railties (>= 3.2, < 5.2)
     hashie (3.5.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
@@ -197,7 +194,6 @@ DEPENDENCIES
   cancancan
   carrierwave (~> 1.0)
   coffee-rails (~> 4.2)
-  growlyflash
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
