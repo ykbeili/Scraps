@@ -1,5 +1,5 @@
-<%= form_for ideas_path, class:"form-group", :method => 'get' do %>
 <p>
+  <%= form_for ideas_path, class:"form-group", :method => 'get' do %>
   <%= text_field_tag :search,'' , class:"form-control" %>
   <%= submit_tag 'Search',class:"btn btn-outline-dark my-2 my-sm-0"%>
 </p>
@@ -21,7 +21,6 @@
       <div class="card-body">
         <li id="black">Description: <%= link_to idea.description,idea_path(idea) %></li>
         <li><small> By: <%= idea.user.full_name %> </small></li>
-
       </div>
     </div>
   </div>

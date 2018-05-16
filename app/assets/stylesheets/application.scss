@@ -13,26 +13,18 @@
  */
 @import "bootstrap";
 @import "scraps";
-
+@import "welcome";
+@import "ideas";
 body {
   background-color: #e9ecef;
-}
-
-body {
-    // overflow: hidden;
     height: 100%;
-}
-
-body {
     padding-top: 50px;
 }
-
 #weird{
   background-color: #343a40 ;
 }
-
 #navBar{
- margin-bottom: 0px !important;
+ margin-bottom: 5px !important;
 }
 h1{
   font-family: PT Sans;
@@ -44,8 +36,27 @@ h3{
 }
 h5 {
   font-family: PT Sans Narrow;
+  font-size: 20px;
 }
 #right{
   font-family: PT Sans;
   font-size: 14px;
+}
+#addIdea{
+  padding-top: 15px;
+}
+#addIdea2nd2{
+  border: 2.3px solid white;
+  border-radius: 15px;
+  padding-bottom: 12px;
+}
+#footer{
+  background-color: red;
+}
+#addIdeaBody{
+  background-image: url("chalk.jpeg");
+  background-size: 99%;
+}
+#AddIdeacontainer{
+  padding-top: 10px;
 }

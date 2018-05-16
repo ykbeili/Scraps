@@ -5,8 +5,11 @@
   <img width="100px" height="100px" src="<%= @scrap.image %>">
   <% end %>
   <br/>
-  <small> By: <%= @scrap.user.full_name %> </small>
-  <hr/>
+  <small> <strong>By:</strong> <%= @scrap.user.full_name %> </small>
+  <br/>
+  <small><strong><%= time_ago_in_words(@scrap.created_at) %> ago</strong></small>
+  <br/>
+  <br/>
 <%= link_to 'Edit',edit_scrap_path(@scrap),class:"btn btn-info" %>
 <%= link_to 'Delete', scrap_path(@scrap), method: :delete, data: {confirm: 'Are you sure?'},class:"btn btn-danger" %>
 <%= simple_form_for [@scrap,@scrapscomment] do |f| %>

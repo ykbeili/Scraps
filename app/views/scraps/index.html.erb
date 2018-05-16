@@ -1,6 +1,8 @@
+<p>
 <%= form_for scraps_path, class:"form-inline my-2 my-lg-0", :method => 'get' do  %>
 <%= text_field_tag :search, '' , class:"form-control" %>
 <%= submit_tag 'Search by Title',class:"btn btn-outline-dark my-2 my-sm-0"%>
+</p>
 <% end %>
 <% if @scraps.any? %>
 <% @scraps.each do |scrap|  %>

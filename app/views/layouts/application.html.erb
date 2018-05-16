@@ -25,15 +25,12 @@
         <li class="nav-item">
           <%= link_to 'Add Scrap',new_scrap_path,class:"nav-link text-light animated bounceInLeft" %>
         </li>
-        <li class="nav-item">
-          
-          <% if user_signed_in? %>
-          <li class="nav-link text-light animated bounceInLeft">Hello, <%=link_to "#{current_user.first_name}",yours_path %></li>
-          <%= link_to "My Profile", yours_path,class:"nav-link text-light animated bounceInLeft"%>
-          <%= link_to "Logout", sessions_path, method: :delete,class:"nav-link text-light animated bounceInLeft"%>
-        </li>
+        <% if user_signed_in? %>
+         <li class="nav-link text-light animated bounceInLeft">Hello, <%=link_to "#{current_user.first_name}",yours_path%></li>
+         <li><%= link_to "My Profile", yours_path,class:"nav-link text-light animated bounceInLeft"%></li>
+         <li><%= link_to "Logout", sessions_path, method: :delete,class:"nav-link        text-light animated bounceInLeft"%>
+         </li>
         <% else %>
-
         <li class="nav-item">
           <%= link_to 'Login',new_sessions_path,class:"nav-link text-light animated bounceInLeft" %>
         </li>
@@ -46,7 +43,6 @@
         <% end %>
       </ul>
     </nav>
-    <br>
     <% if flash[:notice].present? || flash[:alert].present? %>
      <div class="flash-message">
        <%= flash[:notice] || flash[:alert] %>
