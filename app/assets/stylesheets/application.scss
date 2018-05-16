@@ -17,8 +17,8 @@
 @import "ideas";
 body {
   background-color: #e9ecef;
-    height: 100%;
-    padding-top: 50px;
+  height: 100%;
+  padding-top: 50px;
 }
 #weird{
   background-color: #343a40 ;
@@ -51,12 +51,42 @@ h5 {
   padding-bottom: 12px;
 }
 #footer{
-  background-color: red;
+  color: grey;
 }
 #addIdeaBody{
   background-image: url("chalk.jpeg");
-  background-size: 99%;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 #AddIdeacontainer{
   padding-top: 10px;
+}
+#addScrapBody{
+  background-image: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/web-design-wallpaper-background-ground-back-background-images-music.jpg");
+  background-repeat: no-repeat;
+}
+#addScrap2nd2{
+border: 2.3px solid black;
+border-radius: 15px;
+}
+#addScrap{
+  // border: 2.3px solid black;
+}
+#AddScrapSubmit{
+  color:black;
+  border:white;
+  padding-bottom: 7px;
+  background-color: #D3D3D3;
+  font-style: italic;
+  font-weight: bold;
+}
+#AddScrapDescription{
+color:white;
+}
+#AddScrapTitle{
+  color:white;
+  padding-top: 10px;
+}
+#AddImage{
+  color:white;
 }
