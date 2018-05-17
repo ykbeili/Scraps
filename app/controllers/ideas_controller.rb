@@ -41,7 +41,7 @@ class IdeasController < ApplicationController
     redirect_to ideas_path
   end
 
-private
+  private
 
   def authorize_user!
     unless can?(:manage,@idea)

@@ -1,29 +1,29 @@
 <h1>Title: <%= @idea.title %></h1>
 <p><strong>Description: </strong><%= @idea.description %> </h1>
-<br/>
-<small><strong><%= time_ago_in_words(@idea.created_at) %> ago</strong></small>
-<br/>
-<small> <strong>By:</strong> <%= @idea.user.full_name %> </small>
-<br/>
-<br/>
-<%= link_to 'Edit',edit_idea_path(@idea),class:"btn btn-info"  %>
-<%= link_to 'Delete', idea_path(@idea), method: :delete, data: {confirm: 'Are you sure?'},class:"btn btn-danger"  %>
-<hr/>
-<h5> Add Comment </h5>
-<%= simple_form_for [@idea,@ideascomment] do |f| %>
-<%= f.input :body, required: false, label_html: { class: 'abc' } %>
-<%= f.submit 'Add Comment', class: 'btn btn-secondary' %>
-<% end %>
-<hr/>
-<% if @ideascomments.any? %>
-<h3>  Comments: </h3>
-<% @ideascomments.each do |ideascomment| %>
-<p><%= ideascomment.body %></p>
-<small><%= time_ago_in_words(ideascomment.created_at) %> ago</small>
-<br/>
-<small>By:<strong><%= ideascomment.user.full_name %></strong> </small>
-<br/>
-<% if user_signed_in? && can?(:delete, ideascomment) %>
+  <br/>
+  <small><strong><%= time_ago_in_words(@idea.created_at) %> ago</strong></small>
+  <br/>
+  <small> <strong>By:</strong> <%= @idea.user.full_name %> </small>
+  <br/>
+  <br/>
+  <%= link_to 'Edit',edit_idea_path(@idea),class:"btn btn-info"  %>
+  <%= link_to 'Delete', idea_path(@idea), method: :delete, data: {confirm: 'Are you sure?'},class:"btn btn-danger"  %>
+  <hr/>
+  <h5> Add Comment </h5>
+  <%= simple_form_for [@idea,@ideascomment] do |f| %>
+  <%= f.input :body, required: false, label_html: { class: 'abc' } %>
+  <%= f.submit 'Add Comment', class: 'btn btn-secondary' %>
+  <% end %>
+  <hr/>
+  <% if @ideascomments.any? %>
+  <h3>  Comments: </h3>
+  <% @ideascomments.each do |ideascomment| %>
+  <p><%= ideascomment.body %></p>
+  <small><%= time_ago_in_words(ideascomment.created_at) %> ago</small>
+  <br/>
+  <small>By:<strong><%= ideascomment.user.full_name %></strong> </small>
+  <br/>
+  <% if user_signed_in? && can?(:delete, ideascomment) %>
   <small>
     <%= link_to "Delete",
     ideascomment_path(ideascomment),
@@ -33,7 +33,7 @@
     }
     %>
   </small>
-<hr/>
-<% end %>
-<% end %>
-<% end %>
+  <hr/>
+  <% end %>
+  <% end %>
+  <% end %>
