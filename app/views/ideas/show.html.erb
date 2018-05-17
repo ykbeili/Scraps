@@ -29,7 +29,8 @@
       <div id="IdeaCommentsContainer">
         <h3 id="IdeaCommentsTitle"> Comments:  </h3>
         <% @ideascomments.each do |ideascomment| %>
-        <p><strong>Description:</strong> <%= ideascomment.body %></p>
+        <strong>Description:</strong> <%= ideascomment.body %>
+        <br/>
         <small><strong>Commented:</strong> <%= time_ago_in_words(ideascomment.created_at) %> ago</small>
         <br/>
         <small>By:<strong> <%= ideascomment.user.full_name %></strong> </small>

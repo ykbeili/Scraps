@@ -16,7 +16,7 @@
 <hr/>
 <h3>My Scraps: </h3>
 <% if @my_scraps.count == 0 %>
-<p> You haven't created an Scrap post yet </p>
+<p> You haven't created any Scrap post yet </p>
 <%= link_to 'Add the first one',new_scrap_path %>
 <% else %>
 <% @my_scraps.each do |ms| %>

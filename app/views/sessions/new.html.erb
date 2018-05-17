@@ -1,6 +1,20 @@
-<h1> Sign In </h1>
-<%= simple_form_for :session, url: sessions_path do |f| %>
-<%= f.input :email, required: false, label_html: { class: 'abc' } %>
-<%= f.input :password, required: false, label_html: { class: 'abc' } %>
-<%= f.submit 'Sign In', class: 'btn btn-primary' %>
-<% end %>
+<body id="addIdeaBody">
+  <div class="container" id="AddIdeaContainer">
+    <div class="row" id="addIdea">
+      <div class="col" id="boba">
+        <div class="col">
+        </div>
+      </div>
+      <div class="col" id="addIdea2nd23">
+        <h3 id="SignInTitle">Sign In</h3>
+        <%= simple_form_for :session, url: sessions_path do |f| %>
+        <%= f.input :email, required: false, label_html: { class: 'abc' } %>
+        <%= f.input :password, required: false, label_html: { class: 'abc' } %>
+        <%= f.submit 'Sign In', class: 'btn btn-dark' %>
+        <% end %>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+  </div>
+</div>

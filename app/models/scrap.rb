@@ -9,7 +9,7 @@ class Scrap < ApplicationRecord
     if search
       where(['title ILIKE ?', "%#{search}%"])
     else
-      all
+      all.order(created_at: :asc)
     end
   end
 end
