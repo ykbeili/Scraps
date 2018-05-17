@@ -1,8 +1,17 @@
-<p>
-<%= form_for scraps_path, class:"form-inline my-2 my-lg-0", :method => 'get' do  %>
-<%= text_field_tag :search, '' , class:"form-control" %>
-<%= submit_tag 'Search by Title',class:"btn btn-outline-dark my-2 my-sm-0"%>
-</p>
+<body id="ScrapsIndex">
+   <div class="container" id="SearchSracpsContainer">
+    <div class="row">
+     <div class="col-sm">
+</div>
+<div class="col-sm">
+  <%= form_for scraps_path, class:"form-inline my-2 my-lg-0", :method => 'get' do  %>
+  <%= text_field_tag :search, '' , class:"form-control" %>
+</div>
+  <%= submit_tag 'Search by Title',class:"btn btn-outline-dark my-2 my-sm-0"%>
+<div class="col-sm">
+</div>
+</div>
+</div>
 <% end %>
 <% if @scraps.any? %>
 <% @scraps.each do |scrap|  %>
@@ -26,3 +35,4 @@
       <br/>
       <h1> There are no Scraps </h1>
       <% end %>
+</body>

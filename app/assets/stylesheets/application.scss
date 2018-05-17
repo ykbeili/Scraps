@@ -42,13 +42,9 @@ h5 {
   font-family: PT Sans;
   font-size: 14px;
 }
-#addIdea{
-  padding-top: 15px;
-}
-#addIdea2nd2{
-  border: 2.3px solid white;
-  border-radius: 15px;
-  padding-bottom: 12px;
+
+#AddIdeacontainer{
+  padding-top: 10px;
 }
 #footer{
   color: grey;
@@ -58,16 +54,23 @@ h5 {
   background-size: 100%;
   background-repeat: no-repeat;
 }
-#AddIdeacontainer{
-  padding-top: 10px;
-}
 #addScrapBody{
-  background-image: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/web-design-wallpaper-background-ground-back-background-images-music.jpg");
+  background-image: url("chalk.jpeg");
   background-repeat: no-repeat;
+  background-size: 100%;
+}
+#addIdea2nd2{
+  border: 3px solid white;
+  border-radius: 15px;
+  padding-bottom: 10px;
 }
 #addScrap2nd2{
-border: 2.3px solid black;
+border: 3px solid white;
 border-radius: 15px;
+padding-bottom: 10px;
+}
+#addIdea{
+  padding-top: 15px;
 }
 #addScrap{
   // border: 2.3px solid black;
@@ -89,4 +92,23 @@ color:white;
 }
 #AddImage{
   color:white;
+}
+#addIdea2nd2 #IdeaTitle{
+  color: white;
+  font-family: Helvetica Neue;
+  text-align: center;
+  padding-top:15px;
+}
+#addScrap2nd2 #ScrapTitle{
+  color: white;
+  font-family: Helvetica Neue;
+  text-align: center;
+  padding-top:12px;
+}
+#ScrapsIndex{
+  // background-color: gray-dark;
+}
+#SearchSracpsContainer{
+  padding-top: 25px;
+  padding-bottom:20px;
 }
