@@ -5,6 +5,7 @@
       <% if @scrap.image? %>
       <img id="scrapimage" width="300px" height="300px" src="<%= @scrap.image %>"></div>
       <div class="col"><h1>Title: <%= @scrap.title %></h1>
+        <hr/>
         <p><strong>Description: </strong><%= @scrap.description %> </p>
         <small> <strong>By:</strong> <%= @scrap.user.full_name %> </small>
         <br/>
@@ -23,13 +24,13 @@
       <div class="row">
         <div class="col">
           <%= simple_form_for [@scrap,@scrapscomment] do |f| %>
-          <%= f.input :body, required: false, label_html: { class: 'abc' },id:"BodyCommentScrap" %>
+          <%= f.input :body, required: false, label: 'Comment', label_html: { class: 'abc' },id:"BodyCommentScrap" %>
           <%= f.submit 'Add Comment', class: 'btn btn-dark',id:"AddCommentScrap" %>
           <% end %>
         </div>
         <div class="col"><% if @scrapscomments.any? %>
           <div id="ScrapCommentsContainer">
-            <h3> Comments:  </h3>
+            <h3 id="ScrapCommentsTitle"> Comments:  </h3>
             <% @scrapscomments.each do |scrapscomment| %>
             <p><strong>Description:</strong> <%= scrapscomment.body %></p>
             <small><strong>Commented:</strong> <%= time_ago_in_words(scrapscomment.created_at) %> ago</small>

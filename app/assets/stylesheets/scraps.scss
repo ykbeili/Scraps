@@ -80,10 +80,11 @@ figure.pic11 {
 }
 #scrapimage{
   border-radius: 200px;
-  box-shadow: 10px 10px 10px 10px grey;
+  box-shadow: 10px 10px 10px 10px grey
 }
 #ShowSracpsContainer{
   padding-top: 40px;
+  padding-bottom:50px;
 }
 #EditScrapComment{
   width:150px;
@@ -96,4 +97,18 @@ figure.pic11 {
 }
 #ScrapCommentsContainer{
   padding-left: 10px;
+}
+#BodyCommentScrap{
+  width:100px;
+  height: 100px;
+}
+#new_scrapscomment{
+  width: 350px;
+  border: inset #343a40;
+  border-width: 11px;
+  border-radius: 25px;
+  padding: 10px 10px 10px 10px;
+}
+#ScrapCommentsTitle{
+  font-family: El Messiri
 }
