@@ -24,9 +24,11 @@
     <div class="container" id="ShowSracpsContainer2">
       <div class="row">
         <div class="col">
+          <% if user_signed_in? %>
           <%= simple_form_for [@scrap,@scrapscomment] do |f| %>
           <%= f.input :body, required: false, label: 'Comment', label_html: { class: 'abc' },id:"BodyCommentScrap" %>
           <%= f.submit 'Add Comment', class: 'btn btn-dark',id:"AddCommentScrap" %>
+          <% end %>
           <% end %>
         </div>
         <div class="col"><% if @scrapscomments.any? %>
